@@ -1,0 +1,4 @@
+First mongod --dbpath ./data/db  to run the data base 
+2nd go to ur directory node app.js 
+or nodemon app.js 
+ready to go.

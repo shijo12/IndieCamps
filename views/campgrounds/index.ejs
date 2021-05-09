@@ -1,0 +1,42 @@
+<% include ../partials/header %> 
+
+     <header class="jumbotron">
+         <div class="container">
+             <i class="fas fa-campground"></i><h1> Welcome To IndieCamp!</h1>
+             <p>View our hand-picked campgrounds from all over the India</p>
+			 <h5>
+				  Why You Need This Website ?
+			 </h5>
+			 <p>Suppose you are planning to go for camping, but you are unsure about which place to choose from, this is the best place to find out!
+This site has more than 500+ camping site reviews that are reviewed by campers like you, who have already stayed there.
+
+Their experience is very valuble to you, which is why we collect their reviews so that you can easily select the camping site of your choice.
+Furthermore, the facts are periodically verified by a team of professionals, so you can never get lost.
+			 </p>
+             <p>
+                <a class="btn btn-primary btn-lg" href="/campgrounds/new">Add New Campground</a>
+             </p>
+              <p>
+              <form action="/campgrounds" method="GET" class="form-inline" id="campground-search">
+                <div class="form-group">
+                </div>
+              </form>
+             </p>
+         </div>
+     </header>
+     
+     <div class="row text-center" id="campground-grid">
+        <% campgrounds.forEach(function(campground){ %>
+            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                <div class="card">
+                  <img class="card-img-top" src="<%= campground.image %>" alt="<%= campground.name %>">
+                  <div class="card-body">
+                    <h5 class="card-title"><%= campground.name %></h5>
+                    <a href="/campgrounds/<%= campground._id %>" class="btn btn-primary">More Info</a>
+                  </div>
+                </div>
+            </div>
+        <% }); %>
+    </div>
+
+<% include ../partials/footer %>
